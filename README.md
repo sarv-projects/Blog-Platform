@@ -1,5 +1,5 @@
 # Blog-Platform
-A production grade blog platform with user authentication, post CRUD operations, threaded comments.Also ,contains authentication via both gmail,and google account
+A production grade blog platform with user authentication, post CRUD operations, threaded comments.Also ,contains authentication via both mail,and google account
 
 ---
 
