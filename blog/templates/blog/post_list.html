@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog by Sarvesh</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">All Posts</h1>
+        {% for post in posts%}
+        <div class="card mb-3">
+            <div class="card-body">
+    <h5 class="card-title"><a href="{% url 'post_detail' post.pk %}" class="text-decoration-none">
+            {{ post.title }}
+        </a>
+    </h5>
+                <p class="card-text">{{ post.content }}</p>
+                <p class="card-subtitle text-muted">Posted by {{ post.author }} on {{ post.created_at }}</p>
+            <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+<!--
+the link:Loads Bootstrap 5 CSS from a CDN to style the page. This gives you ready-made classes like container, card, mb-3, etc.
+container(in body): A Bootstrap class to center content and add horizontal padding.
+mb-4: Adds bottom margin.
+mt-5: Adds top margin for spacing.
+the for,endfor with the brackets is nothing bbut looping through 
+a list of posts,passed from the django view
+For each post,it renders a card.
+-->
+<!-- 
+The Bootstrap classes used in this are:
+card,card-body,card-title,card-text,card-subtitle,
+ and card-subtitle
+-->
+ <!--
+post.title=inserts the title of the post dynamically
+post.content=inserts the content /body of the pos
+post.author=inserts the author name
+posts.created_at=inserts the timestamp of the post 
+-->
